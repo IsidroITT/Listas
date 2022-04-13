@@ -4,7 +4,7 @@
  * Insertar FIN -L-
  * Eliminar INI -L-
  * Eliminar FIN -L-
- * Modificar    -N-
+ * Modificar    -L-
  * Mostrar      -L-
  */
 package listaDoble;
