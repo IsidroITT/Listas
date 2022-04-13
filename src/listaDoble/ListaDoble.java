@@ -9,8 +9,6 @@
  */
 package listaDoble;
 
-import listas.NodoSimple;
-
 /**
  *
  * @author isidro
