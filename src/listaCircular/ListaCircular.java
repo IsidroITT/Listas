@@ -16,14 +16,40 @@ public class ListaCircular {
        INI = FIN = null;
    }
    //Metodos de estado
-   public boolean listaVacia(){
+   private boolean listaVacia(){
        return INI == null && FIN == null;
    }
    
+   private boolean ultimoNodo(){
+       return INI == FIN;
+   }
    //Insertar
-   
+   public boolean insertar(char dato){
+       NodoSimple NUEVO = new NodoSimple(dato);
+       if (NUEVO == null) return false; //Lista "llena"
+       if(listaVacia()){ //Primer nodo
+           INI = FIN = NUEVO;
+           FIN.sig = INI;
+           return true;
+       }
+       FIN.sig = NUEVO;
+       FIN = NUEVO;
+       FIN.sig = INI;
+       return true;
+   }
    //Eliminar
-   
+   public boolean eliminar(){
+       if(listaVacia()) return false;
+       if(ultimoNodo()){
+           INI = FIN = null;
+       }
+       NodoSimple TMP = INI;
+       INI = INI.sig;
+       TMP.sig = null;
+       TMP = null;
+       FIN.sig = INI;
+       return true;
+   }    
    //Modificar
    public boolean modificar(char buscaNodo, char valorMod){
        if(listaVacia()) return false;

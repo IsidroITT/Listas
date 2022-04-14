@@ -35,7 +35,7 @@ public class ListaSimple {
         //Enlace
         //2 situaciones: 1) vacia  2) existe almenos 1 nodo en la lista
         //Caso 1: Lista vacia
-        if (INI == null && FIN == null) {
+        if (listaVacia()) {
             INI = FIN = NUEVO;
             return true;
         }
