@@ -64,6 +64,7 @@ public class ListaCircular {
        NodoSimple TMP = INI;
        do{
            if(TMP.valor == busca) return TMP;
+           TMP = TMP.sig;
        }while(TMP != FIN);
        return null;
    }

@@ -1,20 +1,24 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package listaDobleCircular;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author isidro
  */
-public class VentanaListaDobleCircular extends javax.swing.JPanel {
-
+public class VentanaListaDobleCircular extends javax.swing.JFrame {
+    ListaDobleCircular lDobleCircular = new ListaDobleCircular();
     /**
      * Creates new form VentanaListaDobleCircular
      */
     public VentanaListaDobleCircular() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,18 +30,51 @@ public class VentanaListaDobleCircular extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnModificar = new javax.swing.JButton();
         lblValor = new javax.swing.JLabel();
+        lblNodo = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
-        btnInsertar = new javax.swing.JButton();
-        btnBorrar = new javax.swing.JButton();
+        txtNodo = new javax.swing.JTextField();
+        btnIngresaINI = new javax.swing.JButton();
+        btnEliminarINI = new javax.swing.JButton();
+        btnIngresaFIN = new javax.swing.JButton();
+        btnEliminarFIN = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         PaneMostrar = new javax.swing.JTextPane();
-        btnMostrar = new javax.swing.JButton();
-        lblNodo = new javax.swing.JLabel();
-        txtNodo = new javax.swing.JTextField();
-        btnInsertar1 = new javax.swing.JButton();
-        btnBorrar1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblValor.setText("Ingresa valor");
+
+        lblNodo.setText("Ingresa nodo");
+
+        btnIngresaINI.setText("INGRESA INI");
+        btnIngresaINI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresaINIActionPerformed(evt);
+            }
+        });
+
+        btnEliminarINI.setText("ELIMINAR INI");
+        btnEliminarINI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarINIActionPerformed(evt);
+            }
+        });
+
+        btnIngresaFIN.setText("INGRESA FIN");
+        btnIngresaFIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresaFINActionPerformed(evt);
+            }
+        });
+
+        btnEliminarFIN.setText("ELIMINAR FIN");
+        btnEliminarFIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarFINActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("MODIFICAR");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -46,156 +83,153 @@ public class VentanaListaDobleCircular extends javax.swing.JPanel {
             }
         });
 
-        lblValor.setText("Escriba valor: ");
-
-        btnInsertar.setText("INSERTAR");
-        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertarActionPerformed(evt);
-            }
-        });
-
-        btnBorrar.setText("BORRAR");
-        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarActionPerformed(evt);
-            }
-        });
-
         jScrollPane1.setViewportView(PaneMostrar);
 
-        btnMostrar.setText("MOSTRAR");
-
-        lblNodo.setText("Escriba nodo: ");
-
-        btnInsertar1.setText("INSERTAR");
-        btnInsertar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertar1ActionPerformed(evt);
-            }
-        });
-
-        btnBorrar1.setText("BORRAR");
-        btnBorrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrar1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMostrar)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnModificar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNodo)
+                            .addComponent(lblValor))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNodo, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(txtValor))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNodo)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblValor)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInsertar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnBorrar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInsertar1)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBorrar1)))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                                .addComponent(btnIngresaFIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnIngresaINI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEliminarFIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminarINI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnModificar)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnInsertar)
-                        .addComponent(btnBorrar))
-                    .addComponent(lblValor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblValor)
+                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnIngresaINI)
+                            .addComponent(btnEliminarINI))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNodo)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnIngresaFIN)
+                                .addComponent(btnEliminarFIN))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(btnModificar)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnInsertar1)
-                        .addComponent(btnBorrar1))
-                    .addComponent(lblNodo))
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMostrar)
-                    .addComponent(btnModificar))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnIngresaINIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaINIActionPerformed
+        char valor = txtValor.getText().toUpperCase().charAt(0);
+        boolean respuesta = lDobleCircular.insertarINI(valor);
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnIngresaINIActionPerformed
+
+    private void btnIngresaFINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaFINActionPerformed
+        char valor = txtValor.getText().toUpperCase().charAt(0);
+        boolean respuesta = lDobleCircular.insertarFIN(valor);
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnIngresaFINActionPerformed
+
+    private void btnEliminarINIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarINIActionPerformed
+        boolean respuesta = lDobleCircular.eliminarINI();
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnEliminarINIActionPerformed
+
+    private void btnEliminarFINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFINActionPerformed
+        boolean respuesta = lDobleCircular.eliminarFIN();
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnEliminarFINActionPerformed
+
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        char nuevoValor = txtValor.getText().toUpperCase().charAt(0);
-        char nodoBusca = txtNodo.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.modificarNodo(nodoBusca, nuevoValor);
-        if(respuesta){
-            showMessageDialog(this, "SE MODIFICO EL VALOR");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR!, NO SE PUEDO MODIFICAR");
-        }
+        char valor = txtValor.getText().toUpperCase().charAt(0);
+        char nodo = txtNodo.getText().toUpperCase().charAt(0);
+        boolean respuesta = lDobleCircular.modificar(nodo,valor);
+        mostrar(respuesta);
     }//GEN-LAST:event_btnModificarActionPerformed
 
-    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-        char valor = txtValor.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.insertar(valor);
-        if(respuesta){
-            showMessageDialog(this, "SE INSERTO");
+    //Metodo mostrar
+    public void mostrar(boolean res){
+        if(res){
+            showMessageDialog(this,"Operacion exitosa");
             txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR! NO SE PUDO INSERTAR");
+            txtNodo.setText("");
+            PaneMostrar.setText(lDobleCircular.mostrar());
         }
-    }//GEN-LAST:event_btnInsertarActionPerformed
-
-    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        boolean respuesta = lista.eliminar();
-        if(respuesta){
-            showMessageDialog(this, "SE ELIMINO EL VALOR");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR! LISTA VACIA");
+        else{
+            showMessageDialog(this,"Error!");
         }
-    }//GEN-LAST:event_btnBorrarActionPerformed
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaListaDobleCircular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaListaDobleCircular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaListaDobleCircular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaListaDobleCircular.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-    private void btnInsertar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsertar1ActionPerformed
-
-    private void btnBorrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBorrar1ActionPerformed
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaListaDobleCircular().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextPane PaneMostrar;
-    private javax.swing.JButton btnBorrar;
-    private javax.swing.JButton btnBorrar1;
-    private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton btnInsertar1;
+    private javax.swing.JButton btnEliminarFIN;
+    private javax.swing.JButton btnEliminarINI;
+    private javax.swing.JButton btnIngresaFIN;
+    private javax.swing.JButton btnIngresaINI;
+    private javax.swing.JButton btnInsertarFIN;
+    private javax.swing.JButton btnInsertarFIN1;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnMostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNodo;
     private javax.swing.JLabel lblValor;

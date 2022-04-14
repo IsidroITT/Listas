@@ -35,16 +35,10 @@ public class ListaDoble {
       if(listaVacia()) {
         INI=FIN=NUEVO;
         return true;}
-      if(ultimoNodo()){
-          insertarFIN(dato);
-          return true;
-      }
-      INI.sig.ant = NUEVO;
-      NUEVO.ant = INI;
-      NUEVO.sig = INI.sig;
-      INI.sig = NUEVO;
+      INI.ant = NUEVO;
+      NUEVO.sig = INI;
+      INI =NUEVO;
       return true;
-      
   }
 
   public boolean insertarFIN(char dato){

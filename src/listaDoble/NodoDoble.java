@@ -9,9 +9,9 @@ package listaDoble;
  * @author isidro
  */
 public class NodoDoble {
-    char dato;
-    NodoDoble sig;
-    NodoDoble ant;
+    public char dato;
+    public NodoDoble sig;
+    public NodoDoble ant;
     
     public NodoDoble(char valor){
         dato = valor;
