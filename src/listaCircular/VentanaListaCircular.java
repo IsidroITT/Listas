@@ -4,17 +4,21 @@
  */
 package listaCircular;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 /**
  *
  * @author isidro
  */
 public class VentanaListaCircular extends javax.swing.JFrame {
-    ListaDoble ld = new ListaDoble();
+    ListaCircular listaCircular = new ListaCircular();
     /**
      * Creates new form VentanaListaCircular
      */
     public VentanaListaCircular() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,35 +30,34 @@ public class VentanaListaCircular extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNodo = new javax.swing.JTextField();
-        btnInsertar1 = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnBorrar1 = new javax.swing.JButton();
         lblValor = new javax.swing.JLabel();
-        txtValor = new javax.swing.JTextField();
-        btnInsertar = new javax.swing.JButton();
-        btnBorrar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        PaneMostrar = new javax.swing.JTextPane();
-        btnMostrar = new javax.swing.JButton();
         lblNodo = new javax.swing.JLabel();
-        txtNodo1 = new javax.swing.JTextField();
-        btnInsertar2 = new javax.swing.JButton();
-        btnModificar1 = new javax.swing.JButton();
-        btnBorrar2 = new javax.swing.JButton();
-        lblValor1 = new javax.swing.JLabel();
-        txtValor1 = new javax.swing.JTextField();
-        btnInsertar3 = new javax.swing.JButton();
-        btnBorrar3 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        PaneMostrar1 = new javax.swing.JTextPane();
-        btnMostrar1 = new javax.swing.JButton();
-        lblNodo1 = new javax.swing.JLabel();
+        txtNodo = new javax.swing.JTextField();
+        btnInsertar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        PaneMostrar = new javax.swing.JTextPane();
+        txtValor = new javax.swing.JTextField();
+        btnMostrar = new javax.swing.JButton();
 
-        btnInsertar1.setText("INSERTAR");
-        btnInsertar1.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblValor.setText("Ingresa Valor");
+
+        lblNodo.setText("Ingresa Nodo");
+
+        btnInsertar.setText("INSERTAR");
+        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertar1ActionPerformed(evt);
+                btnInsertarActionPerformed(evt);
+            }
+        });
+
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
             }
         });
 
@@ -65,231 +68,101 @@ public class VentanaListaCircular extends javax.swing.JFrame {
             }
         });
 
-        btnBorrar1.setText("BORRAR");
-        btnBorrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrar1ActionPerformed(evt);
-            }
-        });
-
-        lblValor.setText("Escriba valor: ");
-
-        btnInsertar.setText("INSERTAR");
-        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertarActionPerformed(evt);
-            }
-        });
-
-        btnBorrar.setText("BORRAR");
-        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarActionPerformed(evt);
-            }
-        });
-
-        jScrollPane1.setViewportView(PaneMostrar);
+        PaneMostrar.setFont(new java.awt.Font("agave Nerd Font Mono", 0, 18)); // NOI18N
+        jScrollPane3.setViewportView(PaneMostrar);
 
         btnMostrar.setText("MOSTRAR");
-
-        lblNodo.setText("Escriba nodo: ");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btnInsertar2.setText("INSERTAR");
-        btnInsertar2.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertar2ActionPerformed(evt);
+                btnMostrarActionPerformed(evt);
             }
         });
-
-        btnModificar1.setText("MODIFICAR");
-        btnModificar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificar1ActionPerformed(evt);
-            }
-        });
-
-        btnBorrar2.setText("BORRAR");
-        btnBorrar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrar2ActionPerformed(evt);
-            }
-        });
-
-        lblValor1.setText("Escriba valor: ");
-
-        btnInsertar3.setText("INSERTAR");
-        btnInsertar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertar3ActionPerformed(evt);
-            }
-        });
-
-        btnBorrar3.setText("BORRAR");
-        btnBorrar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrar3ActionPerformed(evt);
-            }
-        });
-
-        jScrollPane2.setViewportView(PaneMostrar1);
-
-        btnMostrar1.setText("MOSTRAR");
-
-        lblNodo1.setText("Escriba nodo: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMostrar1)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnModificar1))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNodo1)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtNodo1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblValor1)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
+                            .addComponent(lblNodo)
+                            .addComponent(lblValor))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNodo, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(txtValor))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInsertar3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnBorrar3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnInsertar2)
+                                .addComponent(btnInsertar)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBorrar2)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                .addComponent(btnEliminar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnModificar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnMostrar)))
+                        .addContainerGap(49, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnInsertar3)
-                        .addComponent(btnBorrar3))
-                    .addComponent(lblValor1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNodo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnInsertar2)
-                        .addComponent(btnBorrar2))
-                    .addComponent(lblNodo1))
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMostrar1)
-                    .addComponent(btnModificar1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblValor)
+                    .addComponent(btnInsertar)
+                    .addComponent(btnEliminar)
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNodo)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModificar)
+                        .addComponent(btnMostrar)))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsertar1ActionPerformed
-
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        char nuevoValor = txtValor.getText().toUpperCase().charAt(0);
-        char nodoBusca = txtNodo.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.modificarNodo(nodoBusca, nuevoValor);
-        if(respuesta){
-            showMessageDialog(this, "SE MODIFICO EL VALOR");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR!, NO SE PUEDO MODIFICAR");
-        }
-    }//GEN-LAST:event_btnModificarActionPerformed
-
-    private void btnBorrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBorrar1ActionPerformed
-
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         char valor = txtValor.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.insertar(valor);
-        if(respuesta){
-            showMessageDialog(this, "SE INSERTO");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR! NO SE PUDO INSERTAR");
-        }
+        boolean respuesta = listaCircular.insertar(valor);
+        mostrar(respuesta);
     }//GEN-LAST:event_btnInsertarActionPerformed
 
-    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        boolean respuesta = lista.eliminar();
-        if(respuesta){
-            showMessageDialog(this, "SE ELIMINO EL VALOR");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR! LISTA VACIA");
-        }
-    }//GEN-LAST:event_btnBorrarActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        boolean respuesta = listaCircular.eliminar();
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnInsertar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInsertar2ActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        mostrar(true);
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
-    private void btnModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar1ActionPerformed
-        char nuevoValor = txtValor.getText().toUpperCase().charAt(0);
-        char nodoBusca = txtNodo.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.modificarNodo(nodoBusca, nuevoValor);
-        if(respuesta){
-            showMessageDialog(this, "SE MODIFICO EL VALOR");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR!, NO SE PUEDO MODIFICAR");
-        }
-    }//GEN-LAST:event_btnModificar1ActionPerformed
-
-    private void btnBorrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBorrar2ActionPerformed
-
-    private void btnInsertar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertar3ActionPerformed
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         char valor = txtValor.getText().toUpperCase().charAt(0);
-        boolean respuesta = lista.insertar(valor);
-        if(respuesta){
-            showMessageDialog(this, "SE INSERTO");
-            txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
-        }else{
-            showMessageDialog(this, "ERROR! NO SE PUDO INSERTAR");
-        }
-    }//GEN-LAST:event_btnInsertar3ActionPerformed
+        char nodo = txtNodo.getText().toUpperCase().charAt(0);
+        boolean respuesta = listaCircular.modificar(nodo,valor);
+        mostrar(respuesta);
+    }//GEN-LAST:event_btnModificarActionPerformed
 
-    private void btnBorrar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar3ActionPerformed
-        boolean respuesta = lista.eliminar();
-        if(respuesta){
-            showMessageDialog(this, "SE ELIMINO EL VALOR");
+    public void mostrar(boolean res){
+        if(res){
+            showMessageDialog(this,"Operacion exitosa");
             txtValor.setText("");
-            PaneMostrar.setText(lista.mostrar());
+            PaneMostrar.setText(listaCircular.mostrar());
         }else{
-            showMessageDialog(this, "ERROR! LISTA VACIA");
+            showMessageDialog(this,"Error!");
         }
-    }//GEN-LAST:event_btnBorrar3ActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */
@@ -327,28 +200,14 @@ public class VentanaListaCircular extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextPane PaneMostrar;
-    private javax.swing.JTextPane PaneMostrar1;
-    private javax.swing.JButton btnBorrar;
-    private javax.swing.JButton btnBorrar1;
-    private javax.swing.JButton btnBorrar2;
-    private javax.swing.JButton btnBorrar3;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton btnInsertar1;
-    private javax.swing.JButton btnInsertar2;
-    private javax.swing.JButton btnInsertar3;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnModificar1;
     private javax.swing.JButton btnMostrar;
-    private javax.swing.JButton btnMostrar1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblNodo;
-    private javax.swing.JLabel lblNodo1;
     private javax.swing.JLabel lblValor;
-    private javax.swing.JLabel lblValor1;
     private javax.swing.JTextField txtNodo;
-    private javax.swing.JTextField txtNodo1;
     private javax.swing.JTextField txtValor;
-    private javax.swing.JTextField txtValor1;
     // End of variables declaration//GEN-END:variables
 }

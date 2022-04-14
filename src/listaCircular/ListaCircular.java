@@ -72,9 +72,10 @@ public class ListaCircular {
        if(listaVacia()) return "";
        String cad = "";
        NodoSimple TMP = INI;
+       cad += TMP.valor+"-->";
        do{
-           cad += TMP.valor+"-->";
            TMP = TMP.sig;
+           cad += TMP.valor+"-->";
        }while(TMP != FIN);
        return cad;
    }   
