@@ -23,22 +23,6 @@ public class ListaDobleCircular{
        return INI == FIN;
    }
    //Insertar
-   public boolean insertarINI(char dato){
-      NodoDoble NUEVO = new NodoDoble(dato);
-      if(NUEVO == null) return false; //Lista "llena"
-      if(listaVacia()) {
-        INI=FIN=NUEVO;
-        INI.ant = FIN;
-        FIN.sig = INI;
-        return true;}
-      INI.ant = NUEVO;
-      NUEVO.sig = INI;
-      INI =NUEVO;
-      INI.ant = FIN;
-      FIN.sig = INI;
-      return true;
-   }
-   
    public boolean insertarFIN(char dato){
       NodoDoble NUEVO = new NodoDoble(dato);
       if(NUEVO == null) return false; //Lista "llena"
@@ -68,21 +52,28 @@ public class ListaDobleCircular{
         FIN.sig = INI;
         return true;
    } 
-
-   public boolean eliminarFIN(){
-       if (listaVacia()) return false;
-        NodoDoble TMP = FIN;
-        if (ultimoNodo()) {
-            INI = FIN = null; //Se generan condiciones iniciales
-            TMP = null;
-            return true;
-        }//hay 2 o mas nodos
-        FIN.sig = null;
-        FIN = FIN.ant;
-        FIN.sig.ant = null;
-        FIN.sig = INI;
-        INI.ant = FIN;
-        return true;
+   
+   //Mostrar
+   public String mostrarINIaFIN(){
+       if(listaVacia()) return "";
+       String cad = "";
+       NodoDoble TMP = INI;
+       do{
+           cad += TMP.dato+"<-->";
+           TMP = TMP.sig;
+       }while(TMP != INI);
+       return cad;
+   }
+   
+   public String mostrarFINaINI(){
+       if(listaVacia()) return "";
+       String cad = "";
+       NodoDoble TMP = FIN;
+       do{
+           cad += TMP.dato+"<-->";
+           TMP = TMP.ant;
+       }while(TMP != FIN);
+       return cad;
    }
    //Modificar
    public boolean modificar(char buscaNodo, char valorMod){
@@ -103,16 +94,5 @@ public class ListaDobleCircular{
        }while(TMP.sig != INI);
        return null;
    }
-   //Mostrar
-   public String mostrar(){
-       if(listaVacia()) return "";
-       String cad = "";
-       NodoDoble TMP = INI;
-       cad += TMP.dato+"<-->";
-       do{
-           TMP = TMP.sig;
-           cad += TMP.dato+"<-->";
-       }while(TMP != FIN);
-       return cad;
-   }
+   
 }

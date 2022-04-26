@@ -30,7 +30,7 @@ public class VentanaListaDobel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnMostar = new javax.swing.JButton();
+        btnMostarIaF = new javax.swing.JButton();
         txtNodo = new javax.swing.JTextField();
         lblNodo = new javax.swing.JLabel();
         btnInsertarFIN = new javax.swing.JButton();
@@ -42,10 +42,16 @@ public class VentanaListaDobel extends javax.swing.JFrame {
         btnBorrarINI = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         PaneMostrar = new javax.swing.JTextPane();
+        btnMostrarFaI = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnMostar.setText("MOSTRAR");
+        btnMostarIaF.setText("MOSTRAR INI A FIN");
+        btnMostarIaF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostarIaFActionPerformed(evt);
+            }
+        });
 
         lblNodo.setText("Escriba nodo: ");
 
@@ -88,6 +94,13 @@ public class VentanaListaDobel extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(PaneMostrar);
 
+        btnMostrarFaI.setText("MOSTRAR FIN A INI");
+        btnMostrarFaI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarFaIActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,35 +108,38 @@ public class VentanaListaDobel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMostar)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnModificar))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNodo)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblValor)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnInsertatINI)
-                            .addComponent(btnInsertarFIN))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBorrarFIN)
-                            .addComponent(btnBorrarINI))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnMostarIaF)
+                            .addGap(37, 37, 37)
+                            .addComponent(btnMostrarFaI)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnModificar))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblNodo)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblValor)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(37, 37, 37)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnInsertatINI)
+                                .addComponent(btnInsertarFIN))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnBorrarFIN)
+                                .addComponent(btnBorrarINI)))))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,12 +153,13 @@ public class VentanaListaDobel extends javax.swing.JFrame {
                         .addComponent(btnInsertarFIN)
                         .addComponent(btnBorrarFIN))
                     .addComponent(lblNodo))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMostar)
-                    .addComponent(btnModificar))
+                    .addComponent(btnMostarIaF)
+                    .addComponent(btnModificar)
+                    .addComponent(btnMostrarFaI))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -178,11 +195,21 @@ public class VentanaListaDobel extends javax.swing.JFrame {
         mostrarELIMI(respuesta);
     }//GEN-LAST:event_btnBorrarINIActionPerformed
 
+    private void btnMostarIaFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostarIaFActionPerformed
+         txtValor.setText("");
+         PaneMostrar.setText(listaDoble.mostrarINIaFIN());
+    }//GEN-LAST:event_btnMostarIaFActionPerformed
+
+    private void btnMostrarFaIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarFaIActionPerformed
+         
+         PaneMostrar.setText(listaDoble.mostrarFINaINI());
+    }//GEN-LAST:event_btnMostrarFaIActionPerformed
+
     public void mostrarINSER(boolean res){
         if(res){
-            showMessageDialog(this, "SE INSERTO");
             txtValor.setText("");
-            PaneMostrar.setText(listaDoble.mostrar());
+            txtNodo.setText("");
+            showMessageDialog(this, "SE INSERTO");
         }else{
             showMessageDialog(this, "ERROR! LISTA LLENA");
         }
@@ -190,9 +217,9 @@ public class VentanaListaDobel extends javax.swing.JFrame {
     
     public void mostrarELIMI(boolean res){
         if(res){
-            showMessageDialog(this, "SE ELIMINO");
             txtValor.setText("");
-            PaneMostrar.setText(listaDoble.mostrar());
+            txtNodo.setText("");
+            showMessageDialog(this, "SE ELIMINO");
         }else{
             showMessageDialog(this, "ERROR! LISTA VACIA");
         }
@@ -236,12 +263,11 @@ public class VentanaListaDobel extends javax.swing.JFrame {
     private javax.swing.JTextPane PaneMostrar;
     private javax.swing.JButton btnBorrarFIN;
     private javax.swing.JButton btnBorrarINI;
-    private javax.swing.JButton btnInsertar2;
-    private javax.swing.JButton btnInsertar3;
     private javax.swing.JButton btnInsertarFIN;
     private javax.swing.JButton btnInsertatINI;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnMostar;
+    private javax.swing.JButton btnMostarIaF;
+    private javax.swing.JButton btnMostrarFaI;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblNodo;
     private javax.swing.JLabel lblValor;

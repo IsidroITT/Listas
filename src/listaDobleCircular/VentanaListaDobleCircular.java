@@ -34,26 +34,19 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
         lblNodo = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
         txtNodo = new javax.swing.JTextField();
-        btnIngresaINI = new javax.swing.JButton();
         btnEliminarINI = new javax.swing.JButton();
         btnIngresaFIN = new javax.swing.JButton();
-        btnEliminarFIN = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         PaneMostrar = new javax.swing.JTextPane();
+        btnMostrarIaF = new javax.swing.JButton();
+        btnMostrarFaI = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblValor.setText("Ingresa valor");
 
         lblNodo.setText("Ingresa nodo");
-
-        btnIngresaINI.setText("INGRESA INI");
-        btnIngresaINI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresaINIActionPerformed(evt);
-            }
-        });
 
         btnEliminarINI.setText("ELIMINAR INI");
         btnEliminarINI.addActionListener(new java.awt.event.ActionListener() {
@@ -69,13 +62,6 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
             }
         });
 
-        btnEliminarFIN.setText("ELIMINAR FIN");
-        btnEliminarFIN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarFINActionPerformed(evt);
-            }
-        });
-
         btnModificar.setText("MODIFICAR");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,13 +71,31 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(PaneMostrar);
 
+        btnMostrarIaF.setText("MOSTRAR INI A FIN");
+        btnMostrarIaF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarIaFActionPerformed(evt);
+            }
+        });
+
+        btnMostrarFaI.setText("MOSTRAR FIN A INI");
+        btnMostrarFaI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarFaIActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMostrarIaF)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnMostrarFaI))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -101,55 +105,43 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNodo, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                             .addComponent(txtValor))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(btnIngresaFIN)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnIngresaFIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnEliminarINI, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnIngresaINI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEliminarFIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminarINI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModificar)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addGap(95, 95, 95)
+                                .addComponent(btnModificar)))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblValor)
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarINI)
+                    .addComponent(btnIngresaFIN))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblValor)
-                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnIngresaINI)
-                            .addComponent(btnEliminarINI))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNodo)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnIngresaFIN)
-                                .addComponent(btnEliminarFIN))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                    .addComponent(lblNodo)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnModificar)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMostrarIaF)
+                    .addComponent(btnMostrarFaI))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnIngresaINIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaINIActionPerformed
-        char valor = txtValor.getText().toUpperCase().charAt(0);
-        boolean respuesta = lDobleCircular.insertarINI(valor);
-        mostrar(respuesta);
-    }//GEN-LAST:event_btnIngresaINIActionPerformed
 
     private void btnIngresaFINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaFINActionPerformed
         char valor = txtValor.getText().toUpperCase().charAt(0);
@@ -162,11 +154,6 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
         mostrar(respuesta);
     }//GEN-LAST:event_btnEliminarINIActionPerformed
 
-    private void btnEliminarFINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFINActionPerformed
-        boolean respuesta = lDobleCircular.eliminarFIN();
-        mostrar(respuesta);
-    }//GEN-LAST:event_btnEliminarFINActionPerformed
-
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         char valor = txtValor.getText().toUpperCase().charAt(0);
         char nodo = txtNodo.getText().toUpperCase().charAt(0);
@@ -174,13 +161,21 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
         mostrar(respuesta);
     }//GEN-LAST:event_btnModificarActionPerformed
 
+    private void btnMostrarIaFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarIaFActionPerformed
+        PaneMostrar.setText(lDobleCircular.mostrarINIaFIN());
+    }//GEN-LAST:event_btnMostrarIaFActionPerformed
+
+    private void btnMostrarFaIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarFaIActionPerformed
+        PaneMostrar.setText(lDobleCircular.mostrarFINaINI());
+    }//GEN-LAST:event_btnMostrarFaIActionPerformed
+
     //Metodo mostrar
     public void mostrar(boolean res){
         if(res){
             showMessageDialog(this,"Operacion exitosa");
             txtValor.setText("");
             txtNodo.setText("");
-            PaneMostrar.setText(lDobleCircular.mostrar());
+            
         }
         else{
             showMessageDialog(this,"Error!");
@@ -223,13 +218,11 @@ public class VentanaListaDobleCircular extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextPane PaneMostrar;
-    private javax.swing.JButton btnEliminarFIN;
     private javax.swing.JButton btnEliminarINI;
     private javax.swing.JButton btnIngresaFIN;
-    private javax.swing.JButton btnIngresaINI;
-    private javax.swing.JButton btnInsertarFIN;
-    private javax.swing.JButton btnInsertarFIN1;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnMostrarFaI;
+    private javax.swing.JButton btnMostrarIaF;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNodo;
     private javax.swing.JLabel lblValor;

@@ -41,12 +41,12 @@ public class ListaCircular {
    public boolean eliminar(){
        if(listaVacia()) return false;
        if(ultimoNodo()){
+           FIN.sig = null; //Desenlazamos
            INI = FIN = null;
        }
        NodoSimple TMP = INI;
-       INI = INI.sig;
+       INI = TMP.sig;
        TMP.sig = null;
-       TMP = null;
        FIN.sig = INI;
        return true;
    }    
@@ -73,11 +73,10 @@ public class ListaCircular {
        if(listaVacia()) return "";
        String cad = "";
        NodoSimple TMP = INI;
-       cad += TMP.valor+"-->";
        do{
-           TMP = TMP.sig;
            cad += TMP.valor+"-->";
-       }while(TMP != FIN);
+           TMP = TMP.sig;
+       }while(TMP != INI);
        return cad;
    }   
 }

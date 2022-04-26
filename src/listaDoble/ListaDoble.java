@@ -84,12 +84,22 @@ public class ListaDoble {
   }
 
    //Mostrar
-    public String mostrar(){
+    public String mostrarINIaFIN(){
         if(listaVacia()) return "";
         String cad = "";
         
         for(NodoDoble TMP = INI; TMP!=null; TMP = TMP.sig){
-            cad += TMP.dato+"-->";
+            cad += TMP.dato+"<-->";
+        }
+        return cad;
+    }
+    
+    public String mostrarFINaINI(){
+        if(listaVacia()) return "";
+        String cad = "";
+        
+        for(NodoDoble TMP = FIN; TMP!=null; TMP = TMP.ant){
+            cad += TMP.dato+"<-->";
         }
         return cad;
     }
