@@ -52,6 +52,32 @@ public class ListaDoble {
       FIN = NUEVO;
       return true;
   }
+  
+  public boolean insertarPosN(int pos, char dato){
+      NodoDoble NUEVO = new NodoDoble(dato);
+      NodoDoble TMP = buscaPos(pos);
+      if(NUEVO == null || TMP == null) return false;
+      if(ultimoNodo()){
+          INI.ant = NUEVO;
+          NUEVO.sig = INI;
+          INI = NUEVO;
+          return true;
+      }
+      NUEVO.sig = TMP;
+      NUEVO.ant = TMP.ant;
+      TMP.ant = NUEVO;
+       NUEVO.ant.sig = NUEVO;
+      return true;
+  }
+  
+  private NodoDoble buscaPos(int pos){
+      int numNodos = 1;
+      for(NodoDoble TMP = INI; TMP != null; TMP = TMP.sig){
+          if(numNodos==pos) return TMP;
+          numNodos++;
+      }
+      return null;
+  }
   //Eliminar
   public boolean eliminarINI(){
       if (listaVacia()) return false;
