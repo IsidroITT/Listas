@@ -57,6 +57,10 @@ public class ListaDoble {
       NodoDoble NUEVO = new NodoDoble(dato);
       NodoDoble TMP = buscaPos(pos);
       if(NUEVO == null || TMP == null) return false;
+      if(TMP == FIN){
+          insertarFIN(dato);
+          return true;
+      }
       if(ultimoNodo()){
           INI.ant = NUEVO;
           NUEVO.sig = INI;
@@ -66,7 +70,7 @@ public class ListaDoble {
       NUEVO.sig = TMP;
       NUEVO.ant = TMP.ant;
       TMP.ant = NUEVO;
-       NUEVO.ant.sig = NUEVO;
+      NUEVO.ant.sig = NUEVO;
       return true;
   }
   
