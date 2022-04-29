@@ -83,21 +83,40 @@ public class ListaDoble {
       return null;
   }
   //Eliminar
-  public boolean eliminarINI(){
-      if (listaVacia()) return false;
-        NodoDoble TMP = INI;
-        if (ultimoNodo()) {
-            INI = FIN = null; //Se generan condiciones iniciales
-            TMP = null;
-            return true;
-        }//hay 2 o mas nodos
-        INI = TMP.sig;
-        TMP.sig = null;
-        INI.ant = null;
-        TMP = null;
-        return true;
+  public boolean eliminarValor(char valorEliminar){
+      //1.- Lista vacia
+      if(listaVacia()) return false;
+      //2.- Un solo nodo
+      if(ultimoNodo()){
+          eliminarINI();
+          return true;
+      }
+      //3.- Lista con valores
+      //3.1.- Lista vacia
+      if(valorEliminar == INI.dato){ 
+          eliminarINI(); return true;
+      }
+      //3.2.- Un solo nodo
+      if(valorEliminar == FIN.dato){ 
+          NodoDoble TMP = FIN;
+          FIN = TMP.ant;
+          FIN.sig = TMP.ant = null;
+          TMP = null;
+          return true;
+      }
+      //3.3.- Lista con valores
+      NodoDoble TMP = null;
+      for(NodoDoble ciclo = INI.sig; ciclo != null; ciclo = ciclo.sig){
+          if(valorEliminar==ciclo.dato) {TMP = ciclo; break;}
+          else return false;
+      }
+      TMP.ant.sig = TMP.sig;
+      TMP.sig.ant = TMP.ant;
+      TMP.sig = TMP.ant = null;
+      TMP = null;
+      return true;
   }
-
+  
   public boolean eliminarFIN(){
       if (listaVacia()) return false;
         NodoDoble TMP = FIN;
@@ -112,7 +131,22 @@ public class ListaDoble {
         TMP = null;
         return true;
   }
-
+  
+  public boolean eliminarINI(){
+      if (listaVacia()) return false;
+        NodoDoble TMP = INI;
+        if (ultimoNodo()) {
+            INI = FIN = null; //Se generan condiciones iniciales
+            TMP = null;
+            return true;
+        }//hay 2 o mas nodos
+        INI = TMP.sig;
+        TMP.sig = null;
+        INI.ant = null;
+        TMP = null;
+        return true;
+  }
+  
    //Mostrar
     public String mostrarINIaFIN(){
         if(listaVacia()) return "";
