@@ -1,0 +1,67 @@
+public boolean insertar(char valor, int pos){
+NodoDoble NUEVO = new NodoDoble(valor);
+if (NUEVOGRACIAS POR SU
+ATENCIÓN==null) return false;
+
+	if(listaVacia(){
+		INI = FIN = NUEVO;
+		return true;
+	}
+
+	if(pos == 1){
+		INI.ant = NUEVO;
+		NUEVO.sig = INI;
+		INI = NUEVO;
+		return true;
+	}
+
+	for(NodoDoble tmp = INI, int contador = 1; tmp != null; tmp = tmp.sig, contador++){
+		if(contador == posicion){
+			NUEVO.ant = tmp.ant;
+			NUEVO.sig = tmp;
+			tmp.ant = NUEVO;
+			NUEVO.ant.sig = NUEVO;
+			return true;
+		}
+	}
+	return false;//Si no encuentra valor, marca error, en vez de insertar al final
+}
+
+public boolean eliminar(char valorEliminar){
+	if(listaVacia()) return true;
+
+	if(hayUnSoloNodo()){
+		INI = FIN = null;
+		return true;
+	}
+
+	if(INI.dato == valorEliminar){
+		return eliminar();
+	}
+
+	if(FIN.dato ==  valorEliminar){
+		NodoDoble TMP = FIN;
+		FIN = TMP.ant;
+		FIN.sig = TMP.ant = null;
+		TMP = null
+		return true;
+	}
+
+	for(NodoDoble TMP = INI.sig; TMP != FIN; TMP = TMP.sig){
+		TMP.ant.sig = TMP.sig;
+		TMP.sig.ant = TMP.ant;
+		TMP
+	}
+}
+
+
+
+-- PROYECTO UNIDAD 5 y 6
+- 5.1 Generar un vector de minimo 500,000 datos con  tipo de dato long
+  - Burbuja
+  - Quicksort
+  - ShellSort
+  - Radix
+- Medir el tiempo de ejecucion
+- 6.1 Busqueda secuencial
+- 6.2 Busqueda binaria
